@@ -5,7 +5,6 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
-
 const initialFormState = { name: '', description: '' }
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
     if (!e.target.files[0]) return
     const file = e.target.files[0];
     setFormData({ ...formData, image: file.name });
-    await Storage.put(file.name, file);
+    await Storage.put(file.name, file,);
     fetchNotes();
   }
 
